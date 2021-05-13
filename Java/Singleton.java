@@ -1,9 +1,13 @@
+// 인스턴스가 절대적으로 한개만 존재하는 것을 보증할 때,
+// 전역 인스턴스기 때문에 어디서든 접근이 쉬움
+// 싱글턴은 필요시에만, 남발 x
+
 final class Singleton {
-    private static Singleton s = new Singleton(); # getInstance에서 사용될 수 있도록 인스턴스가 미리 생성되어 있어야 한다
+    private static Singleton s = new Singleton(); // getInstance에서 사용될 수 있도록 인스턴스가 미리 생성되어 있어야 한다
     private Singleton(){
-      #...
+      //...
     }
-    public static Singleton getInstance(){ #인스턴스 생성없이 호출해야 해서 static으로 만든다
+    public static Singleton getInstance(){ //인스턴스 생성없이 호출해야 해서 static으로 만든다
         if(s == null){
             s = new Singleton();
         }
